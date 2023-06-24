@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVM CODER HUB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='css/icons.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <script async src="https://cse.google.com/cse.js?cx=2719c83bfac92448d">
+    </script>
+    <script src="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css">
+   </head>
+<body >
+    <div class="tab-nav-container">
+        <div class="tab" onclick="window.location.replace('home.html')">
+          <i class='bx bx-home'></i>
+          <p></p>
+        </div>
+        <div class="tab" onclick="window.location.replace('config.html')">
+          <i class='bx bx-notepad'></i>
+          <p></p>
+        </div>
+        <div class="tab active purple">
+          <i class='bx bx-world'></i>
+          <p></p>
+        </div>
+        <div class="tab" onclick="window.location.replace('projects.html')">
+          <i class='bx bx-heart' ></i>
+          <p></p>
+        </div>
+        <div class="tab" onclick="window.location.replace('profile.html')">
+          <i class='bx bx-user' ></i>
+          <p></p>
+        </div>
+      </div>
+      <div class="head">
+        <img src="files/logoo.png" alt=""><h3>SVM CODER HUB</h3>
+        <h3 class="right" >
+          <i class="bx bxs-download" onclick="checkforupdates()"></i>
+          <i class="bx bxs-dsd"></i>
+          <i class='bx bx-log-out' onclick="logout()" ></i></h3>
+      </div>
+      <p></p>
+  <br><br> <br>
+   <div align="center">
+    <h2 id="clock"></h2></div>
+    <div class="a" align="center" >
+      <div class="gcse-search" ></div>
+    </div>
+    
+   <style>
+    .a {
+  max-height: 75.7vh; 
+  color: black;
+}
+html, body {
+  height: 100%;
+}
+.gsc-completion-container .gsc-completion-title {
+        color: black !important;
+    }
+    .cse .gsc-control-cse, 
+.gsc-control-cse {
+padding: 0em;
+background: transparent;
+border: 0px;
+}
+.search-container {
+        height: 75.7%;
+        overflow-y: auto;
+    }
+    body {
+        background-image: url(files/bg.jpg);
+        background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+        width: 100%;
+        height: auto;
+    }
+    
+    #search-results-container { 
+      color: black;
+  overflow-y: visible;
+}
+input {
+  color: black;
+  background-color: white;
+}
+   </style>
+  <script>
+     
+     var myVar = setInterval(function () {
+	myTimer();
+}, 1e3);
+function myTimer() {
+	var e = new Date();
+	document.getElementById("clock").innerHTML = e.toLocaleTimeString();
+}
+
+    function loadGoogleCSE() {
+    var cx = 'cse?cx=2719c83bfac92448d'; // Replace with your own CSE ID
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  }
+  loadGoogleCSE();
+  function checkforupdates() {
+  var version = localStorage.getItem('version')
+  if (localStorage.getItem('av') == 'yes') {
+    swal({
+      title: "Update Available",
+      text: "Version "+version+" is available to install",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: '#DD6B55',
+      confirmButtonText: 'Install '+localStorage.getItem('size'),
+      cancelButtonText: "Later",
+      closeOnConfirm: false,
+      closeOnCancel: false
+    },
+  function(isConfirm) {
+  if (isConfirm){
+    localStorage.setItem('av','no')
+    swal({
+      title: "Installing",
+      text: "Please wait",
+      imageUrl: 'files/loading.gif'
+    });
+    setTimeout(() => {
+      swal({
+        title: "Installed",
+        text: "Version "+version+" is successfully installed!",
+        imageUrl: 'files/tick.gif'
+      });
+      setTimeout(() => {
+        window.location.replace('update-history.html')
+      }, 2300);
+    }, 2000);
+  } 
+  else {
+    swal({
+      title: "Sure",
+      text: "You can update it later on.",
+      imageUrl: 'files/tick.gif'
+    });
+  }
+}
+    );
+  }
+  else {
+    swal({
+      title: "Already installed",
+      text: "Version "+version+" and it's assets are already installed!",
+      imageUrl: 'files/tick.gif'
+    });
+  }
+}
+  </script>
+  <style>
+    body {
+      color: rgb(255, 255, 255);
+      outline-color: #020008;
+    }
+  </style>
+  
+</body>
+</html>

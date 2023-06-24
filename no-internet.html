@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>No Internet Page</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+        }
+
+        h1 {
+
+            color: #333;
+
+        }
+
+        .container {
+
+            width: 300px;
+
+            margin: 0 auto;
+
+            padding-top: 50px;
+
+        }
+
+        .image {
+
+            margin-bottom: 20px;
+
+        }
+
+        .message {
+
+            color: #888;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img class="image" src="offline.png" alt="No Internet Connection">
+
+        <h1>No Internet Connection</h1>
+
+        <p class="message">Please check your network connection and try again.</p>
+
+    </div>
+
+    <script>
+
+        window.addEventListener('load', function () {
+
+            function updateOnlineStatus(event) {
+
+                var statusElement = document.getElementById('status');
+
+                if (navigator.onLine) {
+
+                    statusElement.innerText = 'Online';
+
+                    statusElement.classList.remove('offline');
+
+                } else {
+
+                    statusElement.innerText = 'Offline';
+
+                    statusElement.classList.add('offline');
+
+                }
+
+            }
+
+            window.addEventListener('online', updateOnlineStatus);
+
+            window.addEventListener('offline', updateOnlineStatus);
+
+            updateOnlineStatus();
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/icons.css">
+  <script async src="https://cse.google.com/cse.js?cx=17634b28baee8423a">
+  </script>
+</head>
+<body>
+  
+  <h2 align="center" id="clock"></h2>
+  <br>
+  <div class="d">
+    <div class="gcse-search"></div>
+  </div>
+  <div class="hi">
+    <h2>djdjdddd</h2>
+  </div>
+  <script>
+   
+  function loadGoogleCSE() {
+    var cx = 'cse?cx=17634b28baee8423a#gsc.tab=0'; // Replace with your own CSE ID
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  }
+  loadGoogleCSE();
+</script>
+<style>
+ #search-results-container {
+  max-height: 300px; /* Adjust the height as needed */
+  overflow-y: auto;
+}
+.hi {
+  position: fixed;
+  bottom: 0;
+  background-color: red;
+  width: 100%;
+  margin: 0;
+}
+</style>
+</body>
+</html>
