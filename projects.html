@@ -131,19 +131,7 @@ Showing ${localStorage.getItem('pcount')} Project(s)
 
   </script>
   <style>
-    body {
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
-}
 
-body::-webkit-scrollbar {
-  width: 0.5em;
-  background-color: transparent;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: transparent;
-}
     #pcount{
       padding: 0em 1.5em;
     }
@@ -161,6 +149,19 @@ body::-webkit-scrollbar-thumb {
 
 
 @media screen and (min-width: 768px) {
+	    body {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+	  }
   .all {
   display: flex;
   flex-wrap: wrap;
